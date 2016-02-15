@@ -1,5 +1,5 @@
 # Custom MOTD
-  - Version.......: 0.2 (Feb 2016)
+  - Version.......: 0.3 (Feb 2016)
   - By............: Mun ~ Cameron Munroe
   - Website.......: https://www.cameronmunroe.com/
   - Git...........: https://git.enjen.net/Munzy/custom_motd
@@ -43,6 +43,7 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
 # Tested On
    - Ubuntu 14.04
    - Debian 8.3
+   - Debian 6.0
    
 # Task List
  
