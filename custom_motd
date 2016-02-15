@@ -186,8 +186,15 @@ fi
 # 		Getting Data
 # =========================================
 
+# Getting Free Memory usage
+MOTD_MEMFREE=`cat /proc/meminfo | grep "MemFree:" | awk '{print $2}'`
+# Getting memory Cache Usages
+MOTD_MEMCACHE=`cat /proc/meminfo | grep "Cached:" | awk '{print $2}'`
+# Creating MOTD_MEMAVAIL Via a failback method
+MOTD_MEMAVAIL=`awk "BEGIN {printf \"%.2f\",${MOTD_MEMFREE}+${MOTD_MEMCACHE}}"`
  # Getting Memory Available for system
-MOTD_MEMAVAIL=`cat /proc/meminfo | grep "MemAvailable:" | awk '{print $2}'`
+ # Can't be used in older systems like Debian 6
+#MOTD_MEMAVAIL=`cat /proc/meminfo | grep "MemAvailable:" | awk '{print $2}'`
 # Getting Memory Total for system
 MOTD_MEMTOTAL=`cat /proc/meminfo | grep "MemTotal:" | awk '{print $2}'`
 #calcing the percentage used
