@@ -3,7 +3,7 @@
 # 		Custom MOTD
 # =========================================
 #
-#  Version: 0.2
+#  Version: 0.3
 #
 # 	By....: Mun ~ Cameron Munroe
 #	Git....: https://git.enjen.net/Munzy/custom_motd
@@ -182,7 +182,9 @@ fi
 # 		End Observium OS Code
 # =========================================
 
-
+MOTD_MEMAVAIL=`cat /proc/meminfo | grep "MemAvailable:" | awk '{print $2}'`
+MOTD_MEMTOTAL=`cat /proc/meminfo | grep "MemTotal:" | awk '{print $2}'`
+MOTD_MEMPERC=`awk "BEGIN {printf \"%.2f\",100-${MOTD_MEMAVAIL}/${MOTD_MEMTOTAL}*100}"`
 MOTD_MYIPADDR=`wget https://www.enjen.net/ip/raw/ --inet4-only -qO- --timeout=2`
 MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/raw/ --inet6-only -qO- --timeout=2`
 MOTD_LASTLOGIN=`last -i | grep -v 'still logged in' | grep 'pts' | head -3 | awk '{print "\\\e[92mLast Logins.:\\\e[39m\\\e[96m",$10,$7,$6,$5,$1,"=>\\\e[31m",$3,"\\\e[39m"}'`
@@ -204,6 +206,7 @@ echo -e "\e[92mIPv4........:\e[39m \e[96m${MOTD_MYIPADDR}\e[39m"
 echo -e "\e[92mIPv6........:\e[39m \e[96m${MOTD_MYIPADDR6}\e[39m"
 echo -e "\e[92mDate........:\e[39m \e[96m`date`\e[39m"
 echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
+echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
 echo -e "\e[92mNet Use.....:\e[39m \e[96m${MOTD_NETMONTH} \e[95mused this month\e[39m"
 echo -e "\e[92mNet Use /s..:\e[39m \e[96m${MOTD_NETMONTHS} \e[95mused this month\e[39m"
 echo -e "\e[92mUptime......:\e[39m \e[96m${MOTD_UPTIME}\e[39m"
