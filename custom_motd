@@ -10,6 +10,8 @@
 #
 # OS Code thanks to Observium!
 #
+# ASCII Art from : http://patorjk.com/software/taag/
+
 
 clear
 
@@ -178,6 +180,7 @@ elif [ "${OS}" = "Darwin" ] ; then
     OSSTR=`/usr/bin/sw_vers|grep -v Build|sed 's/^.*:.//'| tr "\n" ' '`
   fi
 fi
+
 # =========================================
 # 				End Observium OS Code
 # =========================================
@@ -185,8 +188,6 @@ fi
 
 MOTD_MYIPADDR=`wget https://www.enjen.net/ip/raw/ --inet4-only -qO- --timeout=2`
 MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/raw/ --inet6-only -qO- --timeout=2`
-#MOTD_LASTLOGIP=`lastlog -u ${USER} | grep ${USER} | awk '{print $3}'`
-#MOTD_LASTLOGTIME=`lastlog -u ${USER} | grep ${USER} | awk '{print $7,$6,$5,$9}'`
 MOTD_LASTLOGIN=`last | grep -v 'still logged in' | grep 'pts' | head -3 | awk '{print "\e[92mLast Logins.:\e[39m\e[96m",$10,$7,$6,$5,$1,"=>\e[31m",$3,"\e[39m"}'`
 MOTD_LOADAVG=`cat /proc/loadavg | awk '{print $1,$2,$3}'`
 MOTD_UPTIME=`uptime -p`
