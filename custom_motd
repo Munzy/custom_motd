@@ -209,7 +209,7 @@ MOTD_LASTLOGIN=`last -i | grep -v 'still logged in' | grep 'pts' | head -3 | awk
 MOTD_LOADAVG=`cat /proc/loadavg | awk '{print $1,$2,$3}'`
 # Getting Uptime the rough way.
 MOTD_UPTIMESECS=`cat /proc/uptime | awk '{print $1}'`
-MOTD_UPTIME=`awk "BEGIN {printf \"%.2f\",${MOTD_UPTIMESECS}/60/60/24,'DAYS'}"`
+MOTD_UPTIME=`awk "BEGIN {printf \"%.2f\",${MOTD_UPTIMESECS}/60/60/24}"`
 #getting uptime (Isn't supported by older distos, might be useful in the future)
 #MOTD_UPTIME=`uptime -p` 
  # using vnstat for GIB used
@@ -239,6 +239,6 @@ echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
 echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
 echo -e "\e[92mNet Use.....:\e[39m \e[96m${MOTD_NETMONTH} \e[95mused this month\e[39m"
 echo -e "\e[92mNet Use /s..:\e[39m \e[96m${MOTD_NETMONTHS} \e[95mused this month\e[39m"
-echo -e "\e[92mUptime......:\e[39m \e[96m${MOTD_UPTIME}\e[39m"
+echo -e "\e[92mUptime......:\e[39m \e[96m${MOTD_UPTIME}\e[39m \e[95m days\e[39m"
 echo -e "${MOTD_WHO}"
 echo -e "${MOTD_LASTLOGIN}"
