@@ -209,7 +209,7 @@ MOTD_LASTLOGIN=`last -i | grep -v 'still logged in' | grep 'pts' | head -3 | awk
 MOTD_LOADAVG=`cat /proc/loadavg | awk '{print $1,$2,$3}'`
 # Getting Uptime the rough way.
 MOTD_UPTIMESECS=`cat /proc/uptime | awk '{print $1}'`
-MOTD_UPTIME=`awk "BEGIN {printf \"%.2f\",${MOTD_UPTIMESECS}/60/60/24}," Days"`
+MOTD_UPTIME=`awk "BEGIN {printf \"%.2f\",${MOTD_UPTIMESECS}/60/60/24," Days"}"`
 #getting uptime (Isn't supported by older distos, might be useful in the future)
 #MOTD_UPTIME=`uptime -p` 
  # using vnstat for GIB used
