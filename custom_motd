@@ -185,7 +185,7 @@ fi
 
 MOTD_MYIPADDR=`wget https://www.enjen.net/ip/raw/ --inet4-only -qO- --timeout=2`
 MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/raw/ --inet6-only -qO- --timeout=2`
-MOTD_LASTLOGIN=`last | grep -v 'still logged in' | grep 'pts' | head -3 | awk '{print "\e[92mLast Logins.:\e[39m\e[96m",$10,$7,$6,$5,$1,"=>\e[31m",$3,"\e[39m"}'`
+MOTD_LASTLOGIN=`last -i | grep -v 'still logged in' | grep 'pts' | head -3 | awk '{print "\e[92mLast Logins.:\e[39m\e[96m",$10,$7,$6,$5,$1,"=>\e[31m",$3,"\e[39m"}'`
 MOTD_LOADAVG=`cat /proc/loadavg | awk '{print $1,$2,$3}'`
 MOTD_UPTIME=`uptime -p`
 MOTD_NETMONTH=`vnstat -m | grep \`date +"%b"\` | awk '{print $9,$10}'`
