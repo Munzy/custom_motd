@@ -1,6 +1,6 @@
 #!/bin/bash
 # =========================================
-# 				Custom MOTD
+# 		Custom MOTD
 # =========================================
 #
 #  Version: 0.1
@@ -16,7 +16,7 @@
 clear
 
 # =========================================
-# 				Custom MOTD License
+# 		Custom MOTD License
 # =========================================
 
 
@@ -43,12 +43,12 @@ clear
 # SOFTWARE.
 
 # =========================================
-# 				End Custom MOTD License
+# 		End Custom MOTD License
 # =========================================
 
 
 # =========================================
-# 				Observium OS Code
+# 		Observium OS Code
 # =========================================
 
 
@@ -112,7 +112,7 @@ clear
 # MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 # =========================================
-# 				End of License
+# 		End of License
 # =========================================
 
 OS=`uname -s`
@@ -182,7 +182,7 @@ elif [ "${OS}" = "Darwin" ] ; then
 fi
 
 # =========================================
-# 				End Observium OS Code
+# 		End Observium OS Code
 # =========================================
 
 
