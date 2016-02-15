@@ -39,3 +39,7 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
   - ASCII Welcome...: http://patorjk.com/software/taag/
   - ASCII Cat.......: http://www.asciiworld.com/-Cats-.html
   - Etc.............: http://stackoverflow.com/ For being amazing....
+  
+ # Tested On
+   - Ubuntu 14.04
+   - Debian 8.3
