@@ -199,7 +199,7 @@ MOTD_MEMAVAIL=`awk "BEGIN {printf \"%.2f\",${MOTD_MEMFREE}+${MOTD_MEMCACHE}}"`
 MOTD_MEMTOTAL=`cat /proc/meminfo | grep "MemTotal:" | awk '{print $2}'`
 #calcing the percentage used
 MOTD_MEMPERC=`awk "BEGIN {printf \"%.2f\",100-${MOTD_MEMAVAIL}/${MOTD_MEMTOTAL}*100}"`
-# getting our lovely IP
+# getting our lovely IP (no check certificate for debian 6 and older released)
 MOTD_MYIPADDR=`wget https://www.enjen.net/ip/raw/ --inet4-only -qO- --timeout=2 --no-check-certificate` 
  # getting our even cooler IP
 MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/raw/ --inet6-only -qO- --timeout=2 --no-check-certificate`
@@ -207,8 +207,11 @@ MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/raw/ --inet6-only -qO- --timeout=2
 MOTD_LASTLOGIN=`last -i | grep -v 'still logged in' | grep 'pts' | head -3 | awk '{print "\\\e[92mLast Logins.:\\\e[39m\\\e[96m",$10,$7,$6,$5,$1,"=>\\\e[31m",$3,"\\\e[39m"}'`
  # grabbing loadavg
 MOTD_LOADAVG=`cat /proc/loadavg | awk '{print $1,$2,$3}'`
-#getting uptime
-MOTD_UPTIME=`uptime -p` 
+# Getting Uptime the rough way.
+MOTD_UPTIMESECS=`cat /proc/uptime | awk '{print $1}'`
+MOTD_UPTIME=`awk "BEGIN {printf \"%.2f\",${MOTD_UPTIMESECS}/60/60/24}," Days"`
+#getting uptime (Isn't supported by older distos, might be useful in the future)
+#MOTD_UPTIME=`uptime -p` 
  # using vnstat for GIB used
 MOTD_NETMONTH=`vnstat -m | grep \`date +"%b"\` | awk '{print $9,$10}'`
  # using vnstat to gain X/s transfer
