@@ -43,6 +43,7 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
 # Tested On
    - Ubuntu 14.04
    - Debian 8.3
+   - Debian 7.0
    - Debian 6.0
    
 # Task List
