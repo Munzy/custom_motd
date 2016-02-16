@@ -3,7 +3,7 @@
 # 		Custom MOTD
 # =========================================
 #
-#  Version: 0.3.1
+#  Version: 0.3.2
 #
 # 	By....: Mun ~ Cameron Munroe
 #	Git....: https://git.enjen.net/Munzy/custom_motd
@@ -220,7 +220,7 @@ MOTD_NETMONTH=`vnstat -m | grep \`date +"%b"\` | awk '{print $9,$10}'`
 # using vnstat to gain X/s transfer
 MOTD_NETMONTHS=`vnstat -m | grep \`date +"%b"\` | awk '{print $12,$13}'`
 #getting who is currently logged in
-MOTD_WHO=`who --ips | sort | awk '{print "\\\e[92mAct. Logins.:\\\e[39m\\\e[96m",$1,"=>","\\\e[31m",$5,"\\\e[96m",$4,$3,"\\\e[39m"}'`
+MOTD_WHO=`who | sort | awk '{print "\\\e[92mAct. Logins.:\\\e[39m\\\e[96m",$1,"=>","\\\e[31m",$5,"\\\e[96m",$4,$3,"\\\e[39m"}'`
 
 # =========================================
 # 		Echo the message to console. 
@@ -233,8 +233,8 @@ echo -e "\e[95m|  |  |  ||    _]| |___ /  /  |  O  ||  \_/  ||    _] \e[36m   =(
 echo -e "\e[95m|  '  '  ||   [_ |     /   \_ |     ||   |   ||   [_  \e[36m     U  \e[39m"
 echo -e "\e[95m \      / |     ||     \     ||     ||   |   ||     | \e[39m"
 echo -e "\e[95m  \_/\_/  |_____||_____|\____| \___/ |___|___||_____| \e[39m"
-echo -e "\e[92mHostname....:\e[39m \e[96m`hostname -f`\e[39m"
-echo -e "\e[92mOS..........:\e[39m \e[96m${OSSTR}\e[39m\e[31m${MOTD_KERNEL}\e[39m"
+echo -e "\e[92mHostname....:\e[39m \e[96m`hostname`\e[39m"
+echo -e "\e[92mOS..........:\e[39m \e[96m${OSSTR}\e[39m\e[31m ${MOTD_KERNEL}\e[39m"
 echo -e "\e[92mIPv4........:\e[39m \e[96m${MOTD_MYIPADDR}\e[39m"
 echo -e "\e[92mIPv6........:\e[39m \e[96m${MOTD_MYIPADDR6}\e[39m"
 echo -e "\e[92mDate........:\e[39m \e[96m`date`\e[39m"
