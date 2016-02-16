@@ -1,5 +1,5 @@
 # Custom MOTD
-  - Version.......: 0.3.1 (Feb 2016)
+  - Version.......: 0.3.2 (Feb 2016)
   - By............: Mun ~ Cameron Munroe
   - Website.......: https://www.cameronmunroe.com/
   - Git...........: https://git.enjen.net/Munzy/custom_motd
@@ -9,6 +9,12 @@
 Custom MOTD is a addition to the regular MOTD system built into most Linux servers / Desktops. It was built by myself to show valuable information right at login, things that the inital MOTD in most system seem to lack. 
 
 ![](https://www.cameronmunroe.com/u/2016-02-14_23-31-48.png)
+
+
+# Dependencies
+
+  - vnstat
+  - wget  
 
 # Install
 
@@ -20,6 +26,10 @@ Custom MOTD is a addition to the regular MOTD system built into most Linux serve
 6. chmod +x /usr/bin/custom_motd
 7. edit /etc/profile
 8. add custom_motd to the EOF (End of file)
+
+# Example Installers
+
+Example installers can be found under the inst folder. 
 
 # IP Info Source
 
