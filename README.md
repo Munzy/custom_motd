@@ -58,6 +58,10 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
    - Centos 7.1
    - Centos 6
    - Centos 5 (Minor compatability issue with Act. Logins)
+   
+# Known Issues
+   - VestaCP: Breaks some cron functions. 
+   
 # Task List
  
  https://tl.munroenet.com/b/qFvPa8PxWYGkcBLku/custom_motd#
