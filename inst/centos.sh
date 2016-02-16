@@ -1,6 +1,7 @@
 #!/bin/bash
 
 yum install gcc make -y
+yum install wget -y
 cd /tmp
 wget http://humdi.net/vnstat/vnstat-1.12.tar.gz
 tar xzf vnstat-1.12.tar.gz
