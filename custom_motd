@@ -186,37 +186,40 @@ fi
 # 		Getting Data
 # =========================================
 
+
+# getting our lovely IP (no check certificate for debian 6 and older released)
+MOTD_MYIPADDR=`wget https://www.enjen.net/ip/raw/ --inet4-only -qO- --timeout=2 --no-check-certificate` 
+# getting our even cooler IP
+MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/raw/ --inet6-only -qO- --timeout=2 --no-check-certificate`
+# Get Kernel Info
+MOTD_KERNEL=`uname -r`
 # Getting Free Memory usage
 MOTD_MEMFREE=`cat /proc/meminfo | grep "MemFree:" | awk '{print $2}'`
 # Getting memory Cache Usages
 MOTD_MEMCACHE=`cat /proc/meminfo | grep "Cached:" | awk '{print $2}'`
 # Creating MOTD_MEMAVAIL Via a failback method
 MOTD_MEMAVAIL=`awk "BEGIN {printf \"%.2f\",${MOTD_MEMFREE}+${MOTD_MEMCACHE}}"`
- # Getting Memory Available for system
- # Can't be used in older systems like Debian 6
+# Getting Memory Available for system
+# Can't be used in older systems like Debian 6
 #MOTD_MEMAVAIL=`cat /proc/meminfo | grep "MemAvailable:" | awk '{print $2}'`
 # Getting Memory Total for system
 MOTD_MEMTOTAL=`cat /proc/meminfo | grep "MemTotal:" | awk '{print $2}'`
 #calcing the percentage used
 MOTD_MEMPERC=`awk "BEGIN {printf \"%.2f\",100-${MOTD_MEMAVAIL}/${MOTD_MEMTOTAL}*100}"`
-# getting our lovely IP (no check certificate for debian 6 and older released)
-MOTD_MYIPADDR=`wget https://www.enjen.net/ip/raw/ --inet4-only -qO- --timeout=2 --no-check-certificate` 
- # getting our even cooler IP
-MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/raw/ --inet6-only -qO- --timeout=2 --no-check-certificate`
 #getting last login info
 MOTD_LASTLOGIN=`last -i | grep -v 'still logged in' | grep 'pts' | head -3 | awk '{print "\\\e[92mLast Logins.:\\\e[39m\\\e[96m",$10,$7,$6,$5,$1,"=>\\\e[31m",$3,"\\\e[39m"}'`
- # grabbing loadavg
+# grabbing loadavg
 MOTD_LOADAVG=`cat /proc/loadavg | awk '{print $1,$2,$3}'`
 # Getting Uptime the rough way.
 MOTD_UPTIMESECS=`cat /proc/uptime | awk '{print $1}'`
 MOTD_UPTIME=`awk "BEGIN {printf \"%.2f\",${MOTD_UPTIMESECS}/60/60/24}"`
 #getting uptime (Isn't supported by older distos, might be useful in the future)
 #MOTD_UPTIME=`uptime -p` 
- # using vnstat for GIB used
+# using vnstat for GIB used
 MOTD_NETMONTH=`vnstat -m | grep \`date +"%b"\` | awk '{print $9,$10}'`
- # using vnstat to gain X/s transfer
+# using vnstat to gain X/s transfer
 MOTD_NETMONTHS=`vnstat -m | grep \`date +"%b"\` | awk '{print $12,$13}'`
- #getting who is currently logged in
+#getting who is currently logged in
 MOTD_WHO=`who --ips | sort | awk '{print "\\\e[92mAct. Logins.:\\\e[39m\\\e[96m",$1,"=>","\\\e[31m",$5,"\\\e[96m",$4,$3,"\\\e[39m"}'`
 
 # =========================================
@@ -231,7 +234,7 @@ echo -e "\e[95m|  '  '  ||   [_ |     /   \_ |     ||   |   ||   [_  \e[36m     
 echo -e "\e[95m \      / |     ||     \     ||     ||   |   ||     | \e[39m"
 echo -e "\e[95m  \_/\_/  |_____||_____|\____| \___/ |___|___||_____| \e[39m"
 echo -e "\e[92mHostname....:\e[39m \e[96m`hostname -f`\e[39m"
-echo -e "\e[92mOS..........:\e[39m \e[96m${OSSTR}\e[39m"
+echo -e "\e[92mOS..........:\e[39m \e[96m${OSSTR}\e[39m\e[31m${MOTD_KERNEL}\e[39m"
 echo -e "\e[92mIPv4........:\e[39m \e[96m${MOTD_MYIPADDR}\e[39m"
 echo -e "\e[92mIPv6........:\e[39m \e[96m${MOTD_MYIPADDR6}\e[39m"
 echo -e "\e[92mDate........:\e[39m \e[96m`date`\e[39m"
