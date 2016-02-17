@@ -16,7 +16,7 @@ Custom MOTD is a addition to the regular MOTD system built into most Linux serve
   - vnstat
   - wget  
 
-# Install
+# Global Install
 
 1. Download custom_motd to /usr/bin/custom_motd
 2. apt-get install ca-certificates
