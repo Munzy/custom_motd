@@ -191,6 +191,10 @@ fi
 MOTD_MYIPADDR=`wget https://www.enjen.net/ip/raw/ --inet4-only -qO- --timeout=2 --no-check-certificate` 
 # getting our even cooler IP
 MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/raw/ --inet6-only -qO- --timeout=2 --no-check-certificate`
+# getting our lovely IP RDNS (no check certificate for debian 6 and older released)
+MOTD_MYIPADDRR=`wget https://www.enjen.net/ip/raw/rdns/ --inet4-only -qO- --timeout=2 --no-check-certificate` 
+# getting our even cooler IP RDNS
+MOTD_MYIPADDR6R=`wget https://www.enjen.net/ip/raw/rdns/ --inet6-only -qO- --timeout=2 --no-check-certificate`
 # Get Kernel Info
 MOTD_KERNEL=`uname -r`
 # Getting Free Memory usage
@@ -235,8 +239,8 @@ echo -e "\e[95m \      / |     ||     \     ||     ||   |   ||     | \e[39m"
 echo -e "\e[95m  \_/\_/  |_____||_____|\____| \___/ |___|___||_____| \e[39m"
 echo -e "\e[92mHostname....:\e[39m \e[96m`hostname`\e[39m"
 echo -e "\e[92mOS..........:\e[39m \e[96m${OSSTR}\e[39m\e[31m ${MOTD_KERNEL}\e[39m"
-echo -e "\e[92mIPv4........:\e[39m \e[96m${MOTD_MYIPADDR}\e[39m"
-echo -e "\e[92mIPv6........:\e[39m \e[96m${MOTD_MYIPADDR6}\e[39m"
+echo -e "\e[92mIPv4........:\e[39m \e[96m${MOTD_MYIPADDR}\e[39m\e[95 RDNS:\e[39m\e[31m${MOTD_MYIPADDRR}\e[39m"
+echo -e "\e[92mIPv6........:\e[39m \e[96m${MOTD_MYIPADDR6}\e[39m\e[95 RDNS:\e[39m\e[31m${MOTD_MYIPADDR6R}\e[39m"
 echo -e "\e[92mDate........:\e[39m \e[96m`date`\e[39m"
 echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
 echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
