@@ -1,5 +1,5 @@
 # Custom MOTD
-  - Version.......: 0.3.3 (Feb 2016)
+  - Version.......: 0.3.4 (Feb 2016)
   - By............: Mun ~ Cameron Munroe
   - Website.......: https://www.cameronmunroe.com/
   - Git...........: https://git.enjen.net/Munzy/custom_motd
