@@ -3,7 +3,7 @@
 # 		Custom MOTD
 # =========================================
 #
-#  Version: 0.3.6
+#  Version: 0.3.7
 #
 # 	By....: Mun ~ Cameron Munroe
 #	Git....: https://git.enjen.net/Munzy/custom_motd
@@ -188,9 +188,9 @@ fi
 
 
 # getting our lovely IP (no check certificate for debian 6 and older released)
-MOTD_MYIPADDR=`wget https://www.enjen.net/ip/rawz/ --inet4-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"=>\\\e[31m",$2,"\\\e[39m"}'` 
+MOTD_MYIPADDR=`wget https://www.enjen.net/ip/rawz/ --inet4-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'` 
 # getting our even cooler IP
-MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/rawz/ --inet6-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"=>\\\e[31m",$2,"\\\e[39m"}'` 
+MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/rawz/ --inet6-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'` 
 # getting our lovely IP RDNS (no check certificate for debian 6 and older released)
 # MOTD_MYIPADDRR=`wget https://www.enjen.net/ip/raw/rdns/ --inet4-only -qO- --timeout=2 --no-check-certificate` 
 # getting our even cooler IP RDNS
