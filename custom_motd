@@ -3,7 +3,7 @@
 # 		Custom MOTD
 # =========================================
 #
-#  Version: 0.3.7
+#  Version: 0.3.8
 #
 # 	By....: Mun ~ Cameron Munroe
 #	Git....: https://git.enjen.net/Munzy/custom_motd
@@ -244,8 +244,7 @@ echo -e "\e[92mIPv6........:${MOTD_MYIPADDR6}"
 echo -e "\e[92mDate........:\e[39m \e[96m`date`\e[39m"
 echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
 echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
-echo -e "\e[92mNet Use.....:\e[39m \e[96m${MOTD_NETMONTH} \e[95mused this month\e[39m"
-echo -e "\e[92mNet Use /s..:\e[39m \e[96m${MOTD_NETMONTHS} \e[95mused this month\e[39m"
+echo -e "\e[92mNet Use.....:\e[39m \e[96m${MOTD_NETMONTH}\e[39m\e[31m ${MOTD_NETMONTHS} \e[39m\e[95mused this month\e[39m"
 echo -e "\e[92mUptime......:\e[39m \e[96m${MOTD_UPTIME}\e[39m \e[95mdays\e[39m"
 echo -e "${MOTD_WHO}"
 echo -e "${MOTD_LASTLOGIN}"
