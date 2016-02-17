@@ -21,11 +21,24 @@ Custom MOTD is a addition to the regular MOTD system built into most Linux serve
 1. Download custom_motd to /usr/bin/custom_motd
 2. apt-get install ca-certificates
 3. apt-get install vnstat
-4. edit /etc/vnstat.conf
+4. Edit /etc/vnstat.conf
 5. Change 'Interface "eth0"' to your default interface
 6. chmod +x /usr/bin/custom_motd
-7. edit /etc/profile
-8. add custom_motd to the EOF (End of file)
+7. Edit /etc/profile
+8. Add custom_motd to the EOF (End of file)
+
+# Single User Install
+
+1. Download custom_motd to /usr/bin/custom_motd
+2. apt-get install ca-certificates
+3. apt-get install vnstat
+4. Edit /etc/vnstat.conf
+5. Change 'Interface "eth0"' to your default interface
+6. chmod +x /usr/bin/custom_motd
+7. Login into user you wish to have custom_motd installed on
+8. Edit ~/.profile
+9. Add custom_motd to the EOF (End of file)
+10. Repeats steps (7 - 9) as needed for each user. 
 
 # Example Installers
 
@@ -60,7 +73,7 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
    - Centos 5 (Minor compatability issue with Act. Logins)
    
 # Known Issues
-   - VestaCP: Breaks some cron functions. 
+   - VestaCP: Breaks some cron functions. (Use single user install to resolve)
    
 # Task List
  
