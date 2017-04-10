@@ -61,12 +61,16 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
 
 # Credits
 
-  - Total Project...: Cameron Munroe ~ Mun
-  - OS Code.........: Observium https://github.com/tomzx/observium/blob/svn-trunk/scripts/distro
-  - ASCII Welcome...: http://patorjk.com/software/taag/
-  - ASCII Cat.......: http://www.asciiworld.com/-Cats-.html
-  - Etc.............: http://stackoverflow.com/ For being amazing....
-  
+| | |
+| ---- | ---- |
+| Total Project | Cameron Munroe ~ Mun |
+| OS Code | Observium https://github.com/tomzx/observium/blob/svn-trunk/scripts/distro |
+| ASCII Welcome | http://patorjk.com/software/taag/ |
+| ASCII Cat | http://www.asciiworld.com/-Cats-.html |
+| KSM Calculations | https://github.com/tomzx/observium/blob/svn-trunk/scripts/agent-local/ksm |
+| KSM Calculations | https://gist.githubusercontent.com/wankdanker/1206923/raw/73d864c438022ba8c92381f3eddf61bac6163b9f/ksmstat |
+| Et Cetera | http://stackoverflow.com/ For being amazing.... |
+
 # Tested On
    - Ubuntu 14.04
    - Debian 8.3
