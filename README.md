@@ -83,10 +83,7 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
 # Known Issues
    - VestaCP: Breaks some cron functions. (Use single user install to resolve)
    
-# Task List
- 
- https://tl.munroenet.com/b/qFvPa8PxWYGkcBLku/custom_motd#
- 
+
 # Bug Reports
  If you find a bug please post on this forum: https://qwdsa.com/c/forums/bug-reports.18/
  
