@@ -1,5 +1,6 @@
 # Custom MOTD
-
+| | |
+| ---- | ---- |
 | Version | 0.3.9 (April 2017)|
 | By | Mun ~ Cameron Munroe |
 | Website | https://www.cameronmunroe.com |
