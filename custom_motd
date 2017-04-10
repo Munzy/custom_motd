@@ -249,7 +249,7 @@ then
     MOTD_KSM_SIZE=`getconf PAGESIZE`;
     MOTD_KSM_MEM=$(echo "scale=0;${MOTD_KSM_SHARING} * ${MOTD_KSM_SIZE}"|bc);
     MOTD_KSM_MEM=$(expr ${MOTD_KSM_MEM} / 1048576);
-    MOTD_SPECIAL+=`echo -e "\e[92mKSM Saved...:\e[39m \e[96m${MOTD_KSM_MEM}\e[39m \e[95mMB\e[39m"`
+    MOTD_SPECIAL+=`print "\\\e[92mKSM Saved...:\\\e[39m \\\e[96m${MOTD_KSM_MEM}\\\e[39m \\\e[95mMB\\\e[39m"`
 fi
 
     
