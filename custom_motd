@@ -257,12 +257,12 @@ fi
 # Hide IPs that aren't found.
 if [ "${MOTD_MYIPADDR}" != "" ];
 then 
-MOTD_IPS+="\e[92mIPv4........:${MOTD_MYIPADDR}"
+    MOTD_IPS+="\e[92mIPv4........:${MOTD_MYIPADDR}"
 fi
 
 if[ "${MOTD_MYIPADDR6}" != ""];
 then
-MOTD_IPS+="\e[92mIPv6........:${MOTD_MYIPADDR6}"
+    MOTD_IPS+="\e[92mIPv6........:${MOTD_MYIPADDR6}"
 fi
 
 
