@@ -3,7 +3,7 @@
 # 		Custom MOTD
 # =========================================
 #
-#  Version: 0.3.8
+#  Version: 0.3.9
 #
 # 	By....: Mun ~ Cameron Munroe
 #	Git....: https://git.enjen.net/Munzy/custom_motd
@@ -189,42 +189,70 @@ fi
 
 # getting our lovely IP (no check certificate for debian 6 and older released)
 MOTD_MYIPADDR=`wget https://www.enjen.net/ip/rawz/ --inet4-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'` 
+
 # getting our even cooler IP
 MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/rawz/ --inet6-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'` 
+
 # getting our lovely IP RDNS (no check certificate for debian 6 and older released)
 # MOTD_MYIPADDRR=`wget https://www.enjen.net/ip/raw/rdns/ --inet4-only -qO- --timeout=2 --no-check-certificate` 
 # getting our even cooler IP RDNS
 # MOTD_MYIPADDR6R=`wget https://www.enjen.net/ip/raw/rdns/ --inet6-only -qO- --timeout=2 --no-check-certificate`
+
 # Get Kernel Info
 MOTD_KERNEL=`uname -r`
+
 # Getting Free Memory usage
 MOTD_MEMFREE=`cat /proc/meminfo | grep "MemFree:" | awk '{print $2}'`
+
 # Getting memory Cache Usages
 MOTD_MEMCACHE=`cat /proc/meminfo | grep "Cached:" | awk '{print $2}'`
+
 # Creating MOTD_MEMAVAIL Via a failback method
 MOTD_MEMAVAIL=`awk "BEGIN {printf \"%.2f\",${MOTD_MEMFREE}+${MOTD_MEMCACHE}}"`
+
 # Getting Memory Available for system
 # Can't be used in older systems like Debian 6
 #MOTD_MEMAVAIL=`cat /proc/meminfo | grep "MemAvailable:" | awk '{print $2}'`
+
 # Getting Memory Total for system
 MOTD_MEMTOTAL=`cat /proc/meminfo | grep "MemTotal:" | awk '{print $2}'`
+
 #calcing the percentage used
 MOTD_MEMPERC=`awk "BEGIN {printf \"%.2f\",100-${MOTD_MEMAVAIL}/${MOTD_MEMTOTAL}*100}"`
+
 #getting last login info
 MOTD_LASTLOGIN=`last -i | grep -v 'still logged in' | grep 'pts' | head -3 | awk '{print "\\\e[92mLast Logins.:\\\e[39m\\\e[96m",$10,$7,$6,$5,$1,"=>\\\e[31m",$3,"\\\e[39m"}'`
+
 # grabbing loadavg
 MOTD_LOADAVG=`cat /proc/loadavg | awk '{print $1,$2,$3}'`
+
 # Getting Uptime the rough way.
 MOTD_UPTIMESECS=`cat /proc/uptime | awk '{print $1}'`
 MOTD_UPTIME=`awk "BEGIN {printf \"%.2f\",${MOTD_UPTIMESECS}/60/60/24}"`
+
 #getting uptime (Isn't supported by older distos, might be useful in the future)
 #MOTD_UPTIME=`uptime -p` 
+
 # using vnstat for GIB used
 MOTD_NETMONTH=`vnstat -m | grep \`date +"%b"\` | awk '{print $9,$10}'`
+
 # using vnstat to gain X/s transfer
 MOTD_NETMONTHS=`vnstat -m | grep \`date +"%b"\` | awk '{print $12,$13}'`
+
 #getting who is currently logged in
 MOTD_WHO=`who | sort | awk '{print "\\\e[92mAct. Logins.:\\\e[39m\\\e[96m",$1,"=>","\\\e[31m",$5,"\\\e[96m",$4,$3,"\\\e[39m"}'`
+
+# KSM Sharing, check. 
+if [ -d /sys/kernel/mm/ksm ] && [ $(cat /sys/kernel/mm/ksm/run) == "1" ];
+then
+    MOTD_KSM_SHARING=`cat /sys/kernel/mm/ksm/pages_sharing`;
+    MOTD_KSM_SIZE=`getconf PAGESIZE`;
+    MOTD_KSM_MEM=$(echo "scale=0;${MOTD_KSM_SHARING} * ${MOTD_KSM_SIZE}"|bc);
+    MOTD_KSM_MEM=$(expr ${MOTD_KSM_MEM} / 1048576);
+    MOTD_SPECIAL+=`echo -e "\e[92mKSM Saved...:\e[39m \e[96m${MOTD_KSM_MEM}\e[39m \e[95mMB\e[39m"`
+fi
+
+    
 
 # =========================================
 # 		Echo the message to console. 
@@ -246,5 +274,6 @@ echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
 echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
 echo -e "\e[92mNet Use.....:\e[39m \e[96m${MOTD_NETMONTH}\e[39m\e[31m ${MOTD_NETMONTHS} \e[39m\e[95mused this month\e[39m"
 echo -e "\e[92mUptime......:\e[39m \e[96m${MOTD_UPTIME}\e[39m \e[95mdays\e[39m"
+echo -e "${MOTD_SPECIAL}"
 echo -e "${MOTD_WHO}"
 echo -e "${MOTD_LASTLOGIN}"
