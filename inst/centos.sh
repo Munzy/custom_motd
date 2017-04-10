@@ -17,7 +17,7 @@ chkconfig --add vnstat
 chkconfig vnstat on
 
 cd /usr/bin/
-wget https://git.enjen.net/Munzy/custom_motd/raw/master/custom_motd
+wget https://raw.githubusercontent.com/Munroenet/custom_motd/master/custom_motd
 chmod +x custom_motd
 
 echo 'custom_motd' >> /etc/profile
