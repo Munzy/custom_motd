@@ -274,7 +274,7 @@ echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
 echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
 echo -e "\e[92mNet Use.....:\e[39m \e[96m${MOTD_NETMONTH}\e[39m\e[31m ${MOTD_NETMONTHS} \e[39m\e[95mused this month\e[39m"
 echo -e "\e[92mUptime......:\e[39m \e[96m${MOTD_UPTIME}\e[39m \e[95mdays\e[39m"
-if [ ${MOTD_SPECIAL} != "" ];
+if [ "${MOTD_SPECIAL}" != "" ];
 then
     echo -e "${MOTD_SPECIAL}"
 fi
