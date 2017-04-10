@@ -249,7 +249,7 @@ then
     MOTD_KSM_SIZE=`getconf PAGESIZE`;
     MOTD_KSM_MEM=$(echo "scale=0;${MOTD_KSM_SHARING} * ${MOTD_KSM_SIZE}"|bc);
     MOTD_KSM_MEM=$(expr ${MOTD_KSM_MEM} / 1048576);
-    MOTD_SPECIAL+=`print "\\\e[92mKSM Saved...:\\\e[39m \\\e[96m${MOTD_KSM_MEM}\\\e[39m \\\e[95mMB\\\e[39m"`
+    MOTD_SPECIAL+="\e[92mKSM Saved...:\e[39m \e[96m${MOTD_KSM_MEM}\e[39m \e[95mMB\e[39m"
 fi
 
     
@@ -274,6 +274,9 @@ echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
 echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
 echo -e "\e[92mNet Use.....:\e[39m \e[96m${MOTD_NETMONTH}\e[39m\e[31m ${MOTD_NETMONTHS} \e[39m\e[95mused this month\e[39m"
 echo -e "\e[92mUptime......:\e[39m \e[96m${MOTD_UPTIME}\e[39m \e[95mdays\e[39m"
-echo -e "${MOTD_SPECIAL}"
+if [ ${MOTD_SPECIAL} != "" ];
+then
+    echo -e "${MOTD_SPECIAL}"
+fi
 echo -e "${MOTD_WHO}"
 echo -e "${MOTD_LASTLOGIN}"
