@@ -1,9 +1,11 @@
 # Custom MOTD
-  - Version.......: 0.3.8 (Feb 2016)
-  - By............: Mun ~ Cameron Munroe
-  - Website.......: https://www.cameronmunroe.com/
-  - Git...........: https://git.enjen.net/Munzy/custom_motd
-  - GitHub........: https://github.com/Munroenet/custom_motd
+
+| Version | 0.3.9 (April 2017)|
+| By | Mun ~ Cameron Munroe |
+| Website | https://www.cameronmunroe.com |
+| Git | https://git.enjen.net/munzy/custom_motd |
+| Github | https://github.com/Munroenet/custom_motd |
+
 
 # What is Custom MOTD?
 Custom MOTD is a addition to the regular MOTD system built into most Linux servers / Desktops. It was built by myself to show valuable information right at login, things that the inital MOTD in most system seem to lack. 
@@ -57,6 +59,7 @@ We pull the IP info from an external source that I run called enjen.net. All con
 The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will show this months usage. 
 
 # Credits
+
   - Total Project...: Cameron Munroe ~ Mun
   - OS Code.........: Observium https://github.com/tomzx/observium/blob/svn-trunk/scripts/distro
   - ASCII Welcome...: http://patorjk.com/software/taag/
