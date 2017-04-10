@@ -243,7 +243,7 @@ MOTD_NETMONTHS=`vnstat -m | grep \`date +"%b"\` | awk '{print $12,$13}'`
 MOTD_WHO=`who | sort | awk '{print "\\\e[92mAct. Logins.:\\\e[39m\\\e[96m",$1,"=>","\\\e[31m",$5,"\\\e[96m",$4,$3,"\\\e[39m"}'`
 
 # KSM Sharing, check. 
-if [ -d /sys/kernel/mm/ksm ] && [ $(cat /sys/kernel/mm/ksm/run) == "1" ];
+if [ -d /sys/kernel/mm/ksm ] && [ $(cat /sys/kernel/mm/ksm/pages_shared) != "1" ];
 then
     MOTD_KSM_SHARING=`cat /sys/kernel/mm/ksm/pages_sharing`;
     MOTD_KSM_SIZE=`getconf PAGESIZE`;
