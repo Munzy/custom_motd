@@ -254,17 +254,6 @@ then
     MOTD_SPECIAL+="\e[92mKSM Saved...:\e[39m \e[96m${MOTD_KSM_MEM}\e[39m \e[95mMB\e[39m"
 fi
 
-# Hide IPs that aren't found.
-if [ "${MOTD_MYIPADDR}" != "" ];
-then 
-    MOTD_IPS+="\e[92mIPv4........:${MOTD_MYIPADDR}"
-fi
-
-if[ "${MOTD_MYIPADDR6}" != ""];
-then
-    MOTD_IPS+="\e[92mIPv6........:${MOTD_MYIPADDR6}"
-fi
-
 # =========================================
 # 		Echo the message to console. 
 # =========================================
