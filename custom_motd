@@ -265,9 +265,6 @@ then
     MOTD_IPS+="\e[92mIPv6........:${MOTD_MYIPADDR6}"
 fi
 
-
-    
-
 # =========================================
 # 		Echo the message to console. 
 # =========================================
@@ -281,7 +278,8 @@ echo -e "\e[95m \      / |     ||     \     ||     ||   |   ||     | \e[39m"
 echo -e "\e[95m  \_/\_/  |_____||_____|\____| \___/ |___|___||_____| \e[39m"
 echo -e "\e[92mHostname....:\e[39m \e[96m`hostname`\e[39m"
 echo -e "\e[92mOS..........:\e[39m \e[96m${OSSTR}\e[39m\e[31m ${MOTD_KERNEL}\e[39m"
-echo -e $MOTD_IPS}
+echo -e "\e[92mIPv4........:${MOTD_MYIPADDR}"
+echo -e "\e[92mIPv6........:${MOTD_MYIPADDR6}"
 echo -e "\e[92mDate........:\e[39m \e[96m`date`\e[39m"
 echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
 echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
