@@ -11,7 +11,7 @@
 # What is Custom MOTD?
 Custom MOTD is a addition to the regular MOTD system built into most Linux servers / Desktops. It was built by myself to show valuable information right at login, things that the inital MOTD in most system seem to lack. 
 
-![](https://www.cameronmunroe.com/u/2016-02-14_23-31-48.png)
+![](https://www.cameronmunroe.com/u/2017-04-11_15-28-01.png)
 
 
 # Dependencies
