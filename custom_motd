@@ -3,10 +3,11 @@
 # 		Custom MOTD
 # =========================================
 #
-#  Version: 0.3.9
+#  Version: 0.3.10
 #
-# 	By....: Mun ~ Cameron Munroe
+# 	By.....: Mun ~ Cameron Munroe
 #	Git....: https://git.enjen.net/Munzy/custom_motd
+#   Github.: https://github.com/Munroenet/custom_motd
 #
 # OS Code thanks to Observium!
 #
@@ -14,11 +15,10 @@
 #
 # ASCII Cat From: http://www.asciiworld.com/-Cats-.html
 #
+clear
 
 # Set to 0 to disabled special MOTDs. 1 to enable.
 MOTD_SPECIAL_ENABLED="1"
-
-clear
 
 # =========================================
 # 		Custom MOTD License
@@ -45,47 +45,36 @@ clear
 # 		End Custom MOTD License
 # =========================================
 
-
 # =========================================
 # 		Observium OS Code
 # =========================================
-
-
 # From Code:
 # URL: https://github.com/tomzx/observium/blob/svn-trunk/scripts/distro
 
 
 # OS Code from Observium
 # Observium License Version 1.0
-
 # Copyright (C)2012 Adam Armstrong
-
 # The intent of this license is to establish the freedom to use, share
 # and contribute to the software regulated by this license.
-
 # This license applies to any software containing a notice placed by
 # the copyright holder saying that it may be distributed under the
 # terms of this license. Such software is herein referred to as the 
 # Software. This license covers modification and distribution of the 
 # Software.
-
 # Granted Rights
-
 # 1. You are granted the non-exclusive rights set forth in this license
    # provided you agree to and comply with any and all conditions in
    # this license. Whole or partial distribution of the Software, or 
    # software items that link with the Software, in any form signifies 
    # acceptance of this license.
-
 # 2. You may copy and distribute the Software in unmodified form 
    # provided that the entire package, including - but not restricted 
    # to - copyright, trademark notices and disclaimers, as released by 
    # the initial developer of the Software, is distributed.
-
 # 3. You may make modifications to the Software and distribute your 
    # modifications, in a form that is separate from the Software, such 
    # as patches. The following restrictions apply to modifications:
-
    # a. Modifications must not alter or remove any copyright notices in 
       # the Software.
    # b. When modifications to the Software are released under this 
@@ -94,22 +83,17 @@ clear
       # modification in future versions of the Software provided such
       # versions remain available under these terms in addition to any 
       # other license(s) of the initial developer.
-
 # Limitations of Liability
-
 # In no event shall the initial developers or copyright holders be 
 # liable for any damages whatsoever, including - but not restricted 
 # to - lost revenue or profits or other direct, indirect, special, 
 # incidental or consequential damages, even if they have been advised 
 # of the possibility of such damages, except to the extent invariable 
 # law, if any, provides otherwise.
-
 # No Warranty
-
 # The Software and this license document are provided AS IS with NO 
 # WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, 
 # MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-
 # =========================================
 # 		End of License
 # =========================================
@@ -187,8 +171,6 @@ fi
 # =========================================
 # 		Getting Data
 # =========================================
-
-
 # getting our lovely IP (no check certificate for debian 6 and older released)
 MOTD_MYIPADDR=`wget https://www.enjen.net/ip/rawz/ --inet4-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'`
 
