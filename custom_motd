@@ -190,11 +190,20 @@ fi
 
 
 # getting our lovely IP (no check certificate for debian 6 and older released)
-MOTD_MYIPADDR=`wget https://www.enjen.net/ip/rawz/ --inet4-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'` 
+MOTD_MYIPADDR=`wget https://www.enjen.net/ip/rawz/ --inet4-only -qO- --timeout=2 --no-check-certificate`
+
+if [ "${MOTD_MYIPADDR}" != "" ];
+then
+    MOTD_IPS+=` "${MOTD_MYIPADDR}" | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'` 
+fi
 
 # getting our even cooler IP
-MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/rawz/ --inet6-only -qO- --timeout=2 --no-check-certificate | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'` 
+MOTD_MYIPADDR6=`wget https://www.enjen.net/ip/rawz/ --inet6-only -qO- --timeout=2 --no-check-certificate`
 
+if [ "${MOTD_MYIPADDR6}" != "" ];
+then
+    MOTD_IPS+=` "${MOTD_MYIPADDR6}" | awk '{print "\\\e[96m",$1,"\\\e[95m",$2,"\\\e[39m"}'` 
+fi
 # getting our lovely IP RDNS (no check certificate for debian 6 and older released)
 # MOTD_MYIPADDRR=`wget https://www.enjen.net/ip/raw/rdns/ --inet4-only -qO- --timeout=2 --no-check-certificate` 
 # getting our even cooler IP RDNS
@@ -269,6 +278,7 @@ echo -e "\e[95m \      / |     ||     \     ||     ||   |   ||     | \e[39m"
 echo -e "\e[95m  \_/\_/  |_____||_____|\____| \___/ |___|___||_____| \e[39m"
 echo -e "\e[92mHostname....:\e[39m \e[96m`hostname`\e[39m"
 echo -e "\e[92mOS..........:\e[39m \e[96m${OSSTR}\e[39m\e[31m ${MOTD_KERNEL}\e[39m"
+echo -e "${MOTD_IPS}"
 echo -e "\e[92mIPv4........:${MOTD_MYIPADDR}"
 echo -e "\e[92mIPv6........:${MOTD_MYIPADDR6}"
 echo -e "\e[92mDate........:\e[39m \e[96m`date`\e[39m"
