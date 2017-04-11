@@ -15,6 +15,8 @@
 # ASCII Cat From: http://www.asciiworld.com/-Cats-.html
 #
 
+# Set to 0 to disabled special MOTDs. 1 to enable.
+MOTD_SPECIAL_ENABLED="1"
 
 clear
 
@@ -23,7 +25,7 @@ clear
 # =========================================
 
     # Custom_MOTD : A quick computer overview in your MOTD
-    # Copyright (C) {2016}  {Cameron Munroe ~ Mun }
+    # Copyright (C) {2017}  {Cameron Munroe ~ Mun }
 	# munroenet@gmail.com
 
     # This program is free software: you can redistribute it and/or modify
@@ -254,7 +256,7 @@ MOTD_WHO=`who | sort | awk '{print "\\\e[92mAct. Logins.:\\\e[39m\\\e[96m",$1,"=
 # KSM Sharing, check. 
 # Built from https://github.com/tomzx/observium/blob/svn-trunk/scripts/agent-local/ksm
 # -and- https://gist.githubusercontent.com/wankdanker/1206923/raw/73d864c438022ba8c92381f3eddf61bac6163b9f/ksmstat
-if [ -d /sys/kernel/mm/ksm ] && [ $(cat /sys/kernel/mm/ksm/pages_shared) != "0" ];
+if [ -d /sys/kernel/mm/ksm ] && [ $(cat /sys/kernel/mm/ksm/pages_shared) != "0" ] && [ "${MOTD_SPECIAL_ENABLED}" == "1" ];
 then
     MOTD_KSM_SHARING=`cat /sys/kernel/mm/ksm/pages_sharing`;
     MOTD_KSM_SIZE=`getconf PAGESIZE`;
@@ -284,7 +286,7 @@ echo -e "\e[92mLoad........:\e[39m \e[96m${MOTD_LOADAVG}\e[39m"
 echo -e "\e[92mMemory......:\e[39m \e[96m${MOTD_MEMPERC}\e[39m \e[95mpercent used\e[39m"
 echo -e "\e[92mNet Use.....:\e[39m \e[96m${MOTD_NETMONTH}\e[39m\e[31m ${MOTD_NETMONTHS} \e[39m\e[95mused this month\e[39m"
 echo -e "\e[92mUptime......:\e[39m \e[96m${MOTD_UPTIME}\e[39m \e[95mdays\e[39m"
-if [ "${MOTD_SPECIAL}" != "" ];
+if [ "${MOTD_SPECIAL}" != "" ] && [ "${MOTD_SPECIAL_ENABLED}" == "1" ];
 then
     echo -e "${MOTD_SPECIAL}"
 fi
