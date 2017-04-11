@@ -88,3 +88,9 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
  If you find a bug please post on this forum: https://qwdsa.com/c/forums/bug-reports.18/
  
  Give me as much detail as possible so I can diagnose the issue quicker and faster.
+ 
+# Donations
+
+If you like my projects, and work then please donate! 
+
+https://www.cameronmunroe.com/coffee/
