@@ -93,6 +93,7 @@ The bandwidth info comes from vnstat. Vnstat is an amazing little tool and will 
    
 # Known Issues
    - VestaCP: Breaks some cron functions. (Use single user install to resolve)
+   - X2GO: Breaks login ability and returns unset TERM. Disable on the account you are using to bypass. 
    
 
 # Bug Reports
