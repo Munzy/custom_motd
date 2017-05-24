@@ -5,7 +5,7 @@
 | By | Mun ~ Cameron Munroe |
 | Website | https://www.cameronmunroe.com |
 | Git | https://git.enjen.net/munzy/custom_motd |
-| Github | https://github.com/Munroenet/custom_motd |
+| Github | https://github.com/Munzy/custom_motd |
 
 
 # What is Custom MOTD?
@@ -22,13 +22,13 @@ Custom MOTD is a addition to the regular MOTD system built into most Linux serve
 # Quick Install  
 
  Debian based.
- ``` wget -qO- https://raw.githubusercontent.com/Munroenet/custom_motd/master/inst/deb.sh | bash ```
+ ``` wget -qO- https://raw.githubusercontent.com/Munzy/custom_motd/master/inst/deb.sh | bash ```
  
  Centos based.
- ``` wget -qO- https://raw.githubusercontent.com/Munroenet/custom_motd/master/inst/centos.sh | bash ```
+ ``` wget -qO- https://raw.githubusercontent.com/Munzy/custom_motd/master/inst/centos.sh | bash ```
  
  Update custom_motd.
- ``` wget -qO- https://raw.githubusercontent.com/Munroenet/custom_motd/master/inst/upgrade.sh | bash ```
+ ``` wget -qO- https://raw.githubusercontent.com/Munzy/custom_motd/master/inst/upgrade.sh | bash ```
 
 # Global Install
 
