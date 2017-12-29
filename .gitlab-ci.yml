@@ -1,12 +1,13 @@
+before_script:
+- apt-get update -y
+- apt-get upgrade -y
+- chmod +x inst/deb.sh
+- inst/deb.sh
+
+
 test:debian6:
 
   image: debian:6
-
-  before_script:
-  - apt-get update -y
-  - apt-get upgrade -y
-  - chmod +x inst/deb.sh
-  - inst/deb.sh
 
   test:app:
     script:
@@ -16,12 +17,6 @@ test:debian7:
 
   image: debian:7
 
-  before_script:
-  - apt-get update -y
-  - apt-get upgrade -y
-  - chmod +x inst/deb.sh
-  - inst/deb.sh
-
   test:app:
     script:
     - custom_motd
@@ -30,13 +25,7 @@ test:debian7:
 test:debian8:
 
   image: debian:8
-
-  before_script:
-  - apt-get update -y
-  - apt-get upgrade -y
-  - chmod +x inst/deb.sh
-  - inst/deb.sh
-
+  
   test:app:
     script:
     - custom_motd
