@@ -1,21 +1,17 @@
-test:1.6:
-  image: debian:6
-
-  test:app:
+test:debian6:
+    image: debian:6
     script:
-    - custom_motd
+        - chmod +x inst/deb.sh
+        - inst/deb.sh
+        - custom_motd
+    tags:
+      - debian
 
-test:1.7:
-  image: debian:7
-
-  test:app:
+test:debian7:
+    image: debian:7
     script:
-    - custom_motd
-
-
-test:1.8:
-  image: debian:8
-
-  test:app:
-    script:
-    - custom_motd
+        - chmod +x inst/deb.sh
+        - inst/deb.sh
+        - custom_motd
+    tags:
+      - debian
