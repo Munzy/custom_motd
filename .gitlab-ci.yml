@@ -1,12 +1,4 @@
-before_script:
-- apt-get update -y
-- apt-get upgrade -y
-- chmod +x inst/deb.sh
-- inst/deb.sh
-
-
 test:1.6:
-
   image: debian:6
 
   test:app:
@@ -14,7 +6,6 @@ test:1.6:
     - custom_motd
 
 test:1.7:
-
   image: debian:7
 
   test:app:
@@ -23,7 +14,6 @@ test:1.7:
 
 
 test:1.8:
-
   image: debian:8
 
   test:app:
