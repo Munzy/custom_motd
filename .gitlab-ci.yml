@@ -1,17 +1,30 @@
-test:debian8:
-    image: debian:8
-    script:
-        - apt-get update -y
-        - apt-get upgrade -y
-        - chmod +x inst/deb.sh
-        - inst/deb.sh
-        - custom_motd
-
 test:debian7:
     image: debian:7
     script:
         - apt-get update -y
         - apt-get upgrade -y
-        - chmod +x inst/deb.sh
-        - inst/deb.sh
-        - custom_motd
+        - apt-get install wget -y
+        - apt-get install vnstat -y
+        - chmod +x custom_motd
+        - ./custom_motd
+
+test:debian8:
+    image: debian:8
+    script:
+        - apt-get update -y
+        - apt-get upgrade -y
+        - apt-get install wget -y
+        - apt-get install vnstat -y
+        - chmod +x custom_motd
+        - ./custom_motd
+
+test:debian9:
+    image: debian:7
+    script:
+        - apt-get update -y
+        - apt-get upgrade -y
+        - apt-get install wget -y
+        - apt-get install vnstat -y
+        - chmod +x custom_motd
+        - ./custom_motd
+
