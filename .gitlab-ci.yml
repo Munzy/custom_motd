@@ -1,0 +1,11 @@
+image: debian:stable
+
+before_script:
+- apt-get update -y
+- apt-get upgrade -y
+- apt-get install vnstat wget -y
+
+
+test:app:
+  script:
+  - ./custom_motd
