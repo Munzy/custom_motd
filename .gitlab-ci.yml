@@ -82,6 +82,7 @@ test:centos7:
     image: centos:latest
     script:
         - yum update -y
+        - yum install epel-release -y
         - yum install wget vnstat -y
         - chmod +x custom_motd
         - ./custom_motd
