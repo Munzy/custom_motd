@@ -4,8 +4,6 @@ test:debian6:
         - chmod +x inst/deb.sh
         - inst/deb.sh
         - custom_motd
-    tags:
-      - debian
 
 test:debian7:
     image: debian:7
@@ -13,5 +11,3 @@ test:debian7:
         - chmod +x inst/deb.sh
         - inst/deb.sh
         - custom_motd
-    tags:
-      - debian
