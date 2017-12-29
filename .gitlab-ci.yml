@@ -1,5 +1,5 @@
-test:debian6:
-    image: debian:6    
+test:debian8:
+    image: debian:8
     script:
         - apt-get update -y
         - apt-get upgrade -y
