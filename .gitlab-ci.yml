@@ -1,6 +1,8 @@
 test:debian6:
-    image: debian:6
+    image: debian:6    
     script:
+        - apt-get update -y
+        - apt-get upgrade -y
         - chmod +x inst/deb.sh
         - inst/deb.sh
         - custom_motd
@@ -8,6 +10,8 @@ test:debian6:
 test:debian7:
     image: debian:7
     script:
+        - apt-get update -y
+        - apt-get upgrade -y
         - chmod +x inst/deb.sh
         - inst/deb.sh
         - custom_motd
