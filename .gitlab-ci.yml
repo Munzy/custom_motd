@@ -28,3 +28,62 @@ test:debian9:
         - chmod +x custom_motd
         - ./custom_motd
 
+test:ubuntu1404:
+    image: ubuntu:14.04
+    script:
+        - apt-get update -y
+        - apt-get upgrade -y
+        - apt-get install wget -y
+        - apt-get install vnstat -y
+        - chmod +x custom_motd
+        - ./custom_motd
+
+test:ubuntu1604:
+    image: ubuntu:16.04
+    script:
+        - apt-get update -y
+        - apt-get upgrade -y
+        - apt-get install wget -y
+        - apt-get install vnstat -y
+        - chmod +x custom_motd
+        - ./custom_motd
+
+test:ubuntu1704:
+    image: ubuntu:17.04
+    script:
+        - apt-get update -y
+        - apt-get upgrade -y
+        - apt-get install wget -y
+        - apt-get install vnstat -y
+        - chmod +x custom_motd
+        - ./custom_motd    
+
+test:ubuntu1710:
+    image: ubuntu:17.10
+    script:
+        - apt-get update -y
+        - apt-get upgrade -y
+        - apt-get install wget -y
+        - apt-get install vnstat -y
+        - chmod +x custom_motd
+        - ./custom_motd
+
+test:ubuntu1804:
+    image: ubuntu:18.04
+    script:
+        - apt-get update -y
+        - apt-get upgrade -y
+        - apt-get install wget -y
+        - apt-get install vnstat -y
+        - chmod +x custom_motd
+        - ./custom_motd
+
+test:centos7:
+    image: centos:latest
+    script:
+        - yum update
+        - yum install wget vnstat
+        - chmod +x custom_motd
+        - ./custom_motd
+
+
