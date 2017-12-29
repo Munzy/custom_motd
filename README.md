@@ -7,6 +7,8 @@
 | Git | https://git.enjen.net/munzy/custom_motd |
 | Github | https://github.com/Munzy/custom_motd |
 
+[![pipeline status](https://git.enjen.net/munzy/custom_motd/badges/0.4.X/pipeline.svg)](https://git.enjen.net/munzy/custom_motd/commits/0.4.X)
+
 
 # What is Custom MOTD?
 Custom MOTD is a addition to the regular MOTD system built into most Linux servers / Desktops. It was built by myself to show valuable information right at login, things that the inital MOTD in most system seem to lack. 
