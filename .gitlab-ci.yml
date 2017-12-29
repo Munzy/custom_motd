@@ -5,7 +5,7 @@ before_script:
 - inst/deb.sh
 
 
-test:debian6:
+test:1.6:
 
   image: debian:6
 
@@ -13,7 +13,7 @@ test:debian6:
     script:
     - custom_motd
 
-test:debian7:
+test:1.7:
 
   image: debian:7
 
@@ -22,10 +22,10 @@ test:debian7:
     - custom_motd
 
 
-test:debian8:
+test:1.8:
 
   image: debian:8
-  
+
   test:app:
     script:
     - custom_motd
