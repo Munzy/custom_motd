@@ -1,12 +1,42 @@
-image: debian:stable
+test:debian6:
 
-before_script:
-- apt-get update -y
-- apt-get upgrade -y
-- apt-get install vnstat wget -y
-- chmod +x custom_motd
+  image: debian:6
+
+  before_script:
+  - apt-get update -y
+  - apt-get upgrade -y
+  - chmod +x inst/deb.sh
+  - inst/deb.sh
+
+  test:app:
+    script:
+    - custom_motd
+
+test:debian7:
+
+  image: debian:7
+
+  before_script:
+  - apt-get update -y
+  - apt-get upgrade -y
+  - chmod +x inst/deb.sh
+  - inst/deb.sh
+
+  test:app:
+    script:
+    - custom_motd
 
 
-test:app:
-  script:
-  - ./custom_motd
+test:debian8:
+
+  image: debian:8
+
+  before_script:
+  - apt-get update -y
+  - apt-get upgrade -y
+  - chmod +x inst/deb.sh
+  - inst/deb.sh
+
+  test:app:
+    script:
+    - custom_motd
