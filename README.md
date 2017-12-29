@@ -1,7 +1,7 @@
 # Custom MOTD
 | | |
 | ---- | ---- |
-| Version | 0.3.10 (April 2017)|
+| Version | 0.4.0 (December 2017)|
 | By | Mun ~ Cameron Munroe |
 | Website | https://www.cameronmunroe.com |
 | Git | https://git.enjen.net/munzy/custom_motd |

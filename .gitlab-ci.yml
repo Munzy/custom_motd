@@ -81,8 +81,8 @@ test:ubuntu1804:
 test:centos7:
     image: centos:latest
     script:
-        - yum update
-        - yum install wget vnstat
+        - yum update -y
+        - yum install wget vnstat -y
         - chmod +x custom_motd
         - ./custom_motd
 
