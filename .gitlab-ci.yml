@@ -4,6 +4,7 @@ before_script:
 - apt-get update -y
 - apt-get upgrade -y
 - apt-get install vnstat wget -y
+- chmod +x custom_motd
 
 
 test:app:
