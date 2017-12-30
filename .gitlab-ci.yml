@@ -7,6 +7,7 @@ test:debian7:
         - apt-get install vnstat -y
         - chmod +x custom_motd
         - ./custom_motd
+        - loastlog
 
 test:debian8:
     image: debian:8
@@ -77,6 +78,7 @@ test:ubuntu1804:
         - apt-get install vnstat -y
         - chmod +x custom_motd
         - ./custom_motd
+        - lastlog
 
 test:centos7:
     image: centos:latest
