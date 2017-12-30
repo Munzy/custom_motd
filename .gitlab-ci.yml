@@ -86,5 +86,6 @@ test:centos7:
         - yum install wget vnstat -y
         - chmod +x custom_motd
         - ./custom_motd
+        - lastlog
 
 
