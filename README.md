@@ -4,7 +4,6 @@
 | Version | 0.3.10 (April 2017)|
 | By | Mun ~ Cameron Munroe |
 | Website | https://www.cameronmunroe.com |
-| Git | https://git.enjen.net/munzy/custom_motd |
 | Github | https://github.com/Munzy/custom_motd |
 
 
